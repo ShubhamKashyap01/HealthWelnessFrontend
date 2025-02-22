@@ -1,9 +1,15 @@
 
 
-const MyProfile = () => {
-  return (
-    <div>MyProfile</div>
-  )
-}
 
-export default MyProfile
+
+const Profile = () => {
+
+
+  return (
+    <div className="profile-container">
+      <h2 className="text-xl font-bold">Profile</h2>
+    </div>
+  );
+};
+
+export default Profile;

@@ -8,6 +8,7 @@ import "./Login.scss"; // Import SCSS styles
 import { useLoginUserMutation } from "@/services/authService";
 import { setUser } from "@/features/authSlice";
 import { jwtDecode } from "jwt-decode";
+import loginIllustration from "@/assets/login.svg";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -42,6 +43,7 @@ const Login = () => {
             <div className="welcome">
                 <h1>Welcome to Health & Wellness</h1>
                 <p className="subtitle">Login to your account to get started</p>
+                <img src={loginIllustration} alt="Login Illustration" className="login-svg" />
             </div>
             <Card className="login-card">
                 <h2>Login</h2>
