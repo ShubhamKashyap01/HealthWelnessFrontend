@@ -69,10 +69,6 @@ $border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
 
-    &:hover {
-      background: darken($primary-color, 10%);
-    }
-
     &:disabled {
       background: gray;
       cursor: not-allowed;
