@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Home, BarChart, Settings } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const Sidebar = () => {
   return (
