@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { RootState } from "./store/store";
 import './App.css'
 
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import MyProfile from "./pages/MyProfile/MyProfile";
-import WellnessGoals from "./pages/WellnessGoals/WellnessGoals";
-import Messages from "./pages/Messages/Messages";
-import Logout from "./pages/Logout/Logout";
+// import { useSelector } from "react-redux";
+
 function App() {
+  // const [count, setCount] = useState(0)
+  // const user = useSelector((state: RootState) => state.auth.user);
   return (
     <>
       <Router>
@@ -18,12 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<MyProfile />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/goals" element={<WellnessGoals />} />
-         
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </Router>
     </>

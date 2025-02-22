@@ -8,7 +8,7 @@ export const authService = createApi({
   endpoints: (builder) => ({
     registerUser: builder.mutation<{ id: string; name: string; email: string; token: string }, { name: string; email: string; password: string }>({
       query: (userData) => ({
-        url: "/register",
+        url: "https://healthcare-wellness.onrender.com/api/auth/register",
         method: "POST",
         body: userData,
       }),

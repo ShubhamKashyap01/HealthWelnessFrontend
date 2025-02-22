@@ -31,9 +31,11 @@ const Register = () => {
 
     try {
       const response = await registerUser(formData).unwrap();
+      console.log(response, "response");
       dispatch(setUser({ email: formData.email, token: response.token }));
       navigate("/dashboard");
     } catch (err) {
+        console.log(err, "err");
       setError("Registration failed. Try again.");
     }
   };
@@ -65,14 +67,10 @@ const Register = () => {
           <Button type="submit" disabled={isLoading} className="register-btn">
             {isLoading ? "Signing up..." : "Sign Up"}
           </Button>
-
-          <Button variant="outline" className="google-btn">
-            Sign up with Google
-          </Button>
         </form>
 
         <p className="login-link">
-          Already have an account? <a href="/login">Login</a>
+          Already have an account? <a href="/">Login</a>
         </p>
       </Card>
     </div>
