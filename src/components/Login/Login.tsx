@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import "./Login.scss"; // Import SCSS styles
 import { useLoginUserMutation } from "@/services/authService";
 import { setUser } from "@/features/authSlice";
+import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -22,7 +23,9 @@ const Login = () => {
 
         try {
             const response = await loginUser({ email, password }).unwrap();
-            dispatch(setUser({ email, token: response.token }));
+            const decodedToken = jwtDecode(response.token);
+            console.log(decodedToken);
+            dispatch(setUser({ token: response.token }));
             navigate("/dashboard");
         } catch (err) {
             setError("Invalid email or password");
@@ -31,6 +34,10 @@ const Login = () => {
 
     return (
         <div className="login-container">
+            <div className="welcome">
+                <h1>Welcome to Health & Wellness</h1>
+                <p className="subtitle">Login to your account to get started</p>
+            </div>
             <Card className="login-card">
                 <h2>Login</h2>
                 <p className="subtitle">Enter your email below to login to your account</p>
@@ -45,7 +52,6 @@ const Login = () => {
 
                     <div className="input-group">
                         <label>Password</label>
-                        <a href="#" className="forgot-password">Forgot your password?</a>
                         <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
 

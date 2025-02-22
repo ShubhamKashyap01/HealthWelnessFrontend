@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface User {
-  id: string;
-  name: string;
-  email: string;
+  id?: string;
+  name?: string;
+  email?: string;
   age?: number;
   profilePic?: string;
-  role:'provider'|'user';
+  role?:'provider'|'user';
+  token:string;
 }
 
 interface AuthState {
@@ -15,14 +16,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  user: {
-    id: "1",
-    name: "John Doe",
-    email: "john@example.com",
-    age: 30,
-    profilePic: "https://randomuser.me/api/portraits/men/1.jpg",
-    role: 'user'
-  },
+  user: null,
   isAuthenticated: false,
 };
 

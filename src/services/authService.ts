@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const API_URL = "https://your-api.com/api/auth"; // Replace with actual API URL
+const API_URL = "https://healthcare-wellness.onrender.com/api/";
 
 export const authService = createApi({
   reducerPath: "authApi",
@@ -8,14 +8,14 @@ export const authService = createApi({
   endpoints: (builder) => ({
     registerUser: builder.mutation<{ id: string; name: string; email: string; token: string }, { name: string; email: string; password: string }>({
       query: (userData) => ({
-        url: "https://healthcare-wellness.onrender.com/api/auth/register",
+        url: "auth/register",
         method: "POST",
         body: userData,
       }),
     }),
     loginUser: builder.mutation<{ id: string; name: string; email: string; token: string }, { email: string; password: string }>({
       query: (userData) => ({
-        url: "https://healthcare-wellness.onrender.com/api/auth/login",
+        url: "auth/login",
         method: "POST",
         body: userData,
       }),
