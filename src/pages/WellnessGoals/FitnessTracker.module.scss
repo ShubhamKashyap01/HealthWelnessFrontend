@@ -1,0 +1,68 @@
+.fitnessTracker {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 350px;
+    font-family: Arial, sans-serif;
+  
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+  
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+  
+      .progressBar {
+        width: 100%;
+        height: 10px;
+        background: #eee;
+        border-radius: 5px;
+        overflow: hidden;
+        
+        .progress {
+          height: 100%;
+          background: #4caf50;
+          transition: width 0.3s ease;
+        }
+      }
+  
+      .stats {
+        font-size: 14px;
+        color: #555;
+      }
+  
+      .sleepGraph {
+        display: flex;
+        gap: 3px;
+        
+        .block {
+          width: 10px;
+          height: 10px;
+          background: #ddd;
+          border-radius: 2px;
+  
+          &.sleep {
+            background: #4caf50;
+          }
+  
+          &.lightSleep {
+            background: #8bc34a;
+          }
+  
+          &.awake {
+            background: #f44336;
+          }
+        }
+      }
+    }
+  }
+  
