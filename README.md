@@ -2,6 +2,10 @@
 
 This is the frontend repository for the Health Wellness application. This project aims to provide a user-friendly interface for tracking and managing health and wellness activities.
 
+URL : https://health-wellness-frontend-delta.vercel.app/
+Sample user : 
+    - email : jane@example.com 
+    - password : password123
 ## Table of Contents
 
 - [Installation](#installation)

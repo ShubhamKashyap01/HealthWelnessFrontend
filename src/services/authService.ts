@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const API_URL = "https://healthcare-wellness.onrender.com/api/";
 
 export const authService = createApi({
-  reducerPath: "authApi",
+  reducerPath: "authService",
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (builder) => ({
     registerUser: builder.mutation<{ id: string; name: string; email: string; token: string }, { name: string; email: string; password: string }>({

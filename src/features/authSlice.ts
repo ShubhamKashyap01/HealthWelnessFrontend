@@ -6,7 +6,7 @@ interface User {
   email?: string;
   age?: number;
   profilePic?: string;
-  role?:'provider'|'user';
+  role?:string;
   token:string;
 }
 

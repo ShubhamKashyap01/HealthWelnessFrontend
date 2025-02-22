@@ -23,14 +23,17 @@ const Login = () => {
 
         try {
             const response = await loginUser({ email, password }).unwrap();
-            const decodedToken = jwtDecode(response.token);
-            console.log(decodedToken);
-            dispatch(setUser({ token: response.token }));
-            navigate("/dashboard");
+            if (response.token) {
+                const decodedToken: { id: string } = jwtDecode(response.token);
+                console.log(decodedToken);
+                dispatch(setUser({ token: response.token, id: decodedToken.id }));
+                navigate("/dashboard");
+            } else {
+                setError("Token not found");
+            }
         } catch (err) {
             setError("Invalid email or password");
             console.error(err);
-            
         }
     };
 
