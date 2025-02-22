@@ -15,7 +15,7 @@ export const authService = createApi({
     }),
     loginUser: builder.mutation<{ id: string; name: string; email: string; token: string }, { email: string; password: string }>({
       query: (userData) => ({
-        url: "/login",
+        url: "https://healthcare-wellness.onrender.com/api/auth/login",
         method: "POST",
         body: userData,
       }),
