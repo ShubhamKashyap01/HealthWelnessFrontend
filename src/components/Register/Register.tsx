@@ -37,7 +37,7 @@ const Register = () => {
       if (response.token) {
         const decodedToken: { id: string } = jwtDecode(response.token);
         console.log(decodedToken);
-        dispatch(setUser({ token: response.token, id: decodedToken.id }));
+        dispatch(setUser({ token: response.token, id: decodedToken.id, name: formData.name, email: formData.email }));
         navigate("/dashboard");
       } else {
         setError("Token not found");

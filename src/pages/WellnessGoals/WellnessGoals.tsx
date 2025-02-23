@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./FitnessTracker.module.scss";
 
 const WellnessGoals = () => {
